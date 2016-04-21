@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+<%= image_tag "OCHI3500.JPG" , size: "609x405" %>
   <head>
-    <title>Ada Test</title>
+    <title><%= @page_title || "Event application" %></title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
 
@@ -11,5 +12,6 @@
 
   <body>
     <%= yield %>
+
   </body>
 </html>
