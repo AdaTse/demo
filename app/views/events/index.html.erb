@@ -1,11 +1,21 @@
+<%=  link_to 'Home' , welcome_path %>
 <ul>
 <% @events.each do |event| %>
+
   <li>
-              <%= event.name %>
+
+ <%= event.name %>
+<blockquote>
   <%=  link_to 'Show' , :controller => 'events' , :action => 'show' , :id => event %>
   <%=  link_to 'Edit' , :controller => 'events' , :action => 'edit' , :id => event %>
   <%=  link_to 'Delete' , :controller => 'events' , :action => 'destroy' , :id => event %>
+</blockquote>
+
   </li>
+
 <% end %>
 </ul>
-<%=  link_to 'New Event' , :controller => 'events' , :action => 'new' %>
+
+<%=  link_to 'Create' , :controller => 'events' , :action => 'new' %>
+<p></p>
+<%= paginate @events %>

@@ -5,20 +5,24 @@ class PeopleController < ApplicationController
   # GET /people.json
   def index
     @people = Person.all
+    @page_title = 'Member list'
   end
 
   # GET /people/1
   # GET /people/1.json
   def show
+    @page_title = @person.name
   end
 
   # GET /people/new
   def new
     @person = Person.new
+    @page_title = 'Create new member'
   end
 
   # GET /people/1/edit
   def edit
+    @page_title = "Edit member file"
   end
 
   # POST /people
@@ -40,6 +44,7 @@ class PeopleController < ApplicationController
   # PATCH/PUT /people/1
   # PATCH/PUT /people/1.json
   def update
+    @page_title = 'Update member file'
     respond_to do |format|
       if @person.update(person_params)
         format.html { redirect_to @person, notice: 'Person was successfully updated.' }

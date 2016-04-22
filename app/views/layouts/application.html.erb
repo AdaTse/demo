@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<%= image_tag "OCHI3500.JPG" , size: "609x405" %>
+
   <head>
     <title><%= @page_title || "Event application" %></title>
     <%= csrf_meta_tags %>
@@ -11,6 +11,8 @@
   </head>
 
   <body>
+   <p style="color: blue"><%= flash[:notice] %></p>
+   <p style="color: fuchsia"><%= flash[:alert] %></p>
     <%= yield %>
 
   </body>
