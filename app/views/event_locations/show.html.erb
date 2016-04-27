@@ -1,0 +1,15 @@
+<% @page_title = "Location" %>
+
+<h1><%= @event.name %></h1>
+
+<% if @event.location %>
+  <p><%= @event.location.name %></p>
+  <p><%= link_to "Edit", edit_event_location_path(@event) %></p>
+  <p><%= button_to "Destroy", event_location_path(@event), :method => :delete, :data => { :confirm => "Are you sure?" } %></p>
+<% else %>
+  <p>N/A</p>
+  <p><%= link_to "Add location", new_event_location_path(@event) %></p>
+<% end %>
+
+<p><%= link_to 'Back to index', events_path %></p>
+
